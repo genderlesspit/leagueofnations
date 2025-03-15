@@ -82,9 +82,10 @@ update_lon_voting_blocs = {
 		# Clear the array for the current bloc before adding members
 		meta_effect = {
 			text = {
-				clear_array = global.lon_voting_bloc_[?current_bloc_index|.0]_members
+				clear_array = global.lon_voting_bloc_[CURRENT_BLOC]_members
 			}
 			debug = yes
+			CURRENT_BLOC = "[?THIS.current_bloc|.0]"
 		}
 
 		# Iterate through all countries and check if they belong to this bloc
@@ -93,13 +94,14 @@ update_lon_voting_blocs = {
 				meta_effect = {
 					text = {
 						every_country = {
-							limit = { has_country_flag = voting_bloc_[?current_bloc_index|.0]_member }
+							limit = { has_country_flag = voting_bloc_[CURRENT_BLOC]_member }
 							add_to_array = {
-								array = global.lon_voting_bloc_[?current_bloc_index|.0]_members
+								array = global.lon_voting_bloc_[CURRENT_BLOC]_members
 								value = THIS.id
 							}
 						}
 					}
+					CURRENT_BLOC = "[?THIS.current_bloc|.0]"
 					debug = yes  # Debugging output to game.log
 				}
 			}
@@ -121,11 +123,13 @@ calculate_lon_voting_influence = {
 			text = {
 				if = {
 					limit = { has_country_flag = lon_voting_bloc_[CURRENT_BLOC]_member }
-					for_each_scope_loop = {
-						array = global.lon_voting_bloc_[CURRENT_BLOC]_members
-						if = {
-							limit = { NOT = { tag = PREV } }
-							add_to_variable = { PREV.lon_voting_influence = THIS.opinion@PREV }
+					ROOT = {
+						for_each_scope_loop = {
+							array = global.lon_voting_bloc_[CURRENT_BLOC]_members
+							if = {
+								limit = { NOT = { tag = PREV } }
+								add_to_variable = { PREV.lon_voting_influence = THIS.opinion@PREV }
+							}
 						}
 					}
 				}
