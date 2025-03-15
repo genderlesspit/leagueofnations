@@ -1,0 +1,3 @@
+﻿l_english:
+  SC_MEMBER_TOOLTIP: "§Y[This.GetNameDefCap]§! is a permanent security council member."
+  NPSC_MEMBER_TOOLTIP: "§Y[This.GetNameDefCap]§! is a non-permanent security council member."

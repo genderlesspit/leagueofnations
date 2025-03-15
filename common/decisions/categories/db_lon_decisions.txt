@@ -6,7 +6,7 @@ league_of_nations_decisions = {
     # Priority sets the order in the decisions menu (higher values appear near the top).
     priority = 10
 	
-	scripted_gui = league_of_nations_gui
+	scripted_gui = lon_category_gui
     
     # The icon (automatically prefixed with GFX_decision_category_) is shown for the category.
     #icon = lon_icon
