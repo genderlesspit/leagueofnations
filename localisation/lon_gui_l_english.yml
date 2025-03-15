@@ -1,6 +1,0 @@
-﻿l_english:
-  LON_NO_ELECTION: "The League of Nations will hold elections every September, or if the current leader is no longer valid."
-  LON_ELECTION: "The League of Nations will elect a new leader in [?global.lon_elections] days."
-
-  LEAVE_LON: "Leave"
-  DISSOLVE_LON: "Dissolve"
