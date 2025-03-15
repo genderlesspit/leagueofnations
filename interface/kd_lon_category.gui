@@ -1,0 +1,112 @@
+guiTypes = {
+    containerWindowType = {
+        name = "lon_category_gui"
+        position = { x = 0 y = 0 }
+        size = { width=510 height=512 }
+        
+        iconType ={
+            name ="pol_view_bg"
+            spriteType = "GFX_manpower_icon"
+            position = { x = 0 y = 0 }
+            Orientation = "UPPER_LEFT"
+        }
+
+		containerWindowType = {
+			name = "lon_security_council"
+			position = { x = 0 y = 0 }
+			size = { width = 100%% height = 128 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window_1b_border"
+			}
+
+			containerWindowType = {
+				name = "entry_window"
+				position = { x = 0 y = 12 }
+				size = { width = 100%% height = 100%% }
+				margin = { top = 8 left = 8 bottom = 8 right = 8 }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 38
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_window_transparent"
+				}
+
+				gridboxtype = {
+					name = "lon_sc_gridbox"
+					position = { x = -204 y = 0 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 48 height = 32 }
+					format = "CENTER"
+					max_slots_vertical = 1
+				}
+
+				gridboxtype = {
+					name = "lon_npsc_gridbox"
+					position = { x = -396 y = 48 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 48 height = 32 }
+					format = "CENTER"
+					max_slots_horizontal = 9
+					max_slots_vertical = 5
+				}
+			}
+		}
+    }
+	containerWindowType = {
+		name = "lon_sc_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 48 height = 48 }
+
+		containerWindowType = {
+			name = "flag_window"
+			position = { x = 0 y = 0 }
+			size = { width = 50 height = 50 }
+
+			# flag
+			buttonType = {
+				name = "entry_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x = 5 y = 4 }
+				pdx_tooltip = SC_MEMBER_TOOLTIP
+				pdx_tooltip_delayed = SC_MEMBER_TOOLTIP_DELAYED
+			}
+
+			iconType = {
+				name = "entry_flag_border"
+				quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+		}
+	}
+	containerWindowType = {
+		name = "lon_npsc_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 48 height = 48 }
+
+		containerWindowType = {
+			name = "flag_window"
+			position = { x = 0 y = 0 }
+			size = { width = 50 height = 50 }
+
+			# flag
+			buttonType = {
+				name = "entry_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x = 5 y = 4 }
+				pdx_tooltip = NPSC_MEMBER_TOOLTIP
+				pdx_tooltip_delayed = NPSC_MEMBER_TOOLTIP_DELAYED
+			}
+
+			iconType = {
+				name = "entry_flag_border"
+				quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+		}
+	}
+}

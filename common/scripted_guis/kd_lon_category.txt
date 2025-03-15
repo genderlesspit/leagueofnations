@@ -1,0 +1,32 @@
+scripted_gui = {
+	lon_category_gui = {
+		context_type = decision_category
+		window_name = "lon_category_gui"
+
+		visible = {
+		}
+
+		triggers = {
+		}
+		effects = {
+		}
+
+		dynamic_lists = {
+			lon_sc_gridbox = {
+				array = global.lon_permanent_council_members
+				entry_container = lon_sc_entry
+				change_scope = yes
+			}
+			lon_npsc_gridbox = {
+				array = global.lon_non_permanent_council_members
+				entry_container = lon_npsc_entry
+				change_scope = yes
+			}
+		}
+		properties = {
+			entry_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+	}
+}
