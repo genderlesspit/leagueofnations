@@ -1,8 +1,0 @@
-﻿l_english:
-  MAPMODE_LON_MEMBERSHIP_NAME: "League of Nations"
-  MAPMODE_LON_MEMBERSHIP_DESCRIPTION: "Shows the relationships nations have with the League of Nations."
-  lon_membership_tooltip: "[FROM.controller.lon_membership_tooltip]"
-  lon_membership_tooltip_delayed: "[FROM.controller.lon_membership_tooltip_delayed]"
-  LON_LEADER: "[THIS.GetFlag][THIS.GetNameDefCap] is the leader of the League of Nations."
-  LON_MEMBER: "[THIS.GetFlag][THIS.GetNameDefCap] is a League of Nations member."
-  LON_NON_MEMBER: "[THIS.GetFlag][THIS.GetNameDefCap] is not a League of Nations member."
