@@ -2,39 +2,39 @@ on_actions = { #Determine Article Violation
     on_weekly = {
         effect = {
             every_country = { 
-                if = {
-                    limit = { lon_article_8_exists = yes }
-                    if = {
-                        limit = { lon_violation_article_8 = yes }
-                        set_country_flag = {
-                            flag = violated_lon_article_8
-                            days = 90  # Adjusted for severity of violation
-                            value = 1
-                        }
-                        ROOT = { save_event_target_as = violated_lon_article_8 }
-                        every_country = {
-                            limit = { is_lon_member = yes }
-                            country_event = lon_violations.8
-                        }
-                    }
-                }
+                #if = {
+                #    limit = { lon_article_8_exists = yes }
+                #    if = {
+                #        limit = { lon_violation_article_8 = yes }
+                #        set_country_flag = {
+                #            flag = violated_lon_article_8
+                #            days = 90  # Adjusted for severity of violation
+                #            value = 1
+                #        }
+                #        ROOT = { save_event_target_as = violated_lon_article_8 }
+                #        every_country = {
+                #            limit = { is_lon_member = yes }
+                #            country_event = lon_violations.8
+                #        }
+                #    }
+                #}
 
-                if = {
-                    limit = { lon_article_9_exists = yes }
-                    if = {
-                        limit = { lon_violation_article_9 = yes }
-                        set_country_flag = {
-                            flag = violated_lon_article_9
-                            days = 60
-                            value = 1
-                        }
-                        ROOT = { save_event_target_as = violated_lon_article_9 }
-                        every_country = {
-                            limit = { is_lon_member = yes }
-                            country_event = lon_violations.9
-                        }
-                    }
-                }
+                #if = {
+                #    limit = { lon_article_9_exists = yes }
+                #    if = {
+                #        limit = { lon_violation_article_9 = yes }
+                #        set_country_flag = {
+                #            flag = violated_lon_article_9
+                #            days = 60
+                #            value = 1
+                #        }
+                #        ROOT = { save_event_target_as = violated_lon_article_9 }
+                #        every_country = {
+                #            limit = { is_lon_member = yes }
+                #            country_event = lon_violations.9
+                #        }
+                #    }
+                #}
 
                 if = {
                     limit = { lon_article_10_exists = yes }

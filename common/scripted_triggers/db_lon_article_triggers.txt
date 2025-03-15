@@ -1,6 +1,8 @@
 # Checks if a country is a member of the League of Nations.
 # This can be used in various event, decision, and AI logic conditions.
 
+# Unimplemented Articles: 4, 8, 9
+
 is_lon_member = {
     OR = {
         has_idea = lon_permanent_council_member
@@ -16,68 +18,107 @@ is_lon_council = {
 	}
 }
     
-lon_violation_article_4 = { # Checks if a nation is violating Council membership rules
-	NOT = { }
-}
+#lon_violation_article_4 = { # Checks if a nation is violating Council membership rules
+#	NOT = { }
+#}
+#
+#lon_article_4_exists = { # Checks if Article 4 is in effect
+#	has_global_flag = lon_article_4
+#}
+#
+#lon_violation_article_8 = { # Checks if a nation has exceeded League-imposed armament limits or failed to comply with reductions
+#	OR = { }
+#}
+#
+#lon_article_8_exists = { # Checks if Article 8 (armament reductions) is in effect
+#	has_global_flag = lon_article_8
+#}
+#
+#lon_violation_article_9 = { # Checks if a nation is disregarding the Permanent Military Commission’s recommendations
+#	NOT = { }
+#}
+#
+#lon_article_9_exists = { # Checks if Article 9 (Permanent Military Commission) is in effect
+#	has_global_flag = lon_article_9
+#}
+#
 
-lon_article_4_exists = { # Checks if Article 4 is in effect
-	has_global_flag = lon_article_4
-}
-
-lon_violation_article_8 = { # Checks if a nation has exceeded League-imposed armament limits or failed to comply with reductions
-	OR = { }
-}
-
-lon_article_8_exists = { # Checks if Article 8 (armament reductions) is in effect
-	has_global_flag = lon_article_8
-}
-
-lon_violation_article_9 = { # Checks if a nation is disregarding the Permanent Military Commission’s recommendations
-	NOT = { }
-}
-
-lon_article_9_exists = { # Checks if Article 9 (Permanent Military Commission) is in effect
-	has_global_flag = lon_article_9
-}
+#
+# Article 10
+#
 
 lon_violation_article_10 = { # Checks if a nation has violated another League member’s territorial integrity
-	NOT = { }
+	any_country = {
+		limit = { is_lon_member = yes }
+		any_country = { 
+			limit = { NOT = { is_lon_member = yes } }
+			has_war_with = PREV	
+		}
+	}
 }
 
 lon_article_10_exists = { # Checks if Article 10 (territorial integrity protection) is in effect
 	has_global_flag = lon_article_10
 }
 
+#
+# Article 11
+#
+
 lon_violation_article_11 = { # Checks if a nation has engaged in or provoked war without League involvement
-	OR = { }
+	any_country = {
+		limit = { NOT = { is_lon_member = yes } }
+		any_country = { 
+			limit = { NOT = { is_lon_member = yes } }
+			has_war_with = PREV	
+		}
+	}
 }
 
 lon_article_11_exists = { # Checks if Article 11 (war and conflict prevention) is in effect
 	has_global_flag = lon_article_11
 }
 
+#
+# Article 12
+#
+
 lon_violation_article_12 = { # Checks if a nation has refused arbitration before resorting to war
-	NOT = { }
+	any_country = {
+		limit = { is_lon_member = yes }
+		any_country = { 
+			limit = { is_lon_member = yes }
+			OR = {
+				has_wargoal_against = PREV
+				is_justifying_wargoal_against = PREV
+			}
+		}
+	}
 }
 
 lon_article_12_exists = { # Checks if Article 12 (mandatory arbitration before war) is in effect
 	has_global_flag = lon_article_12
 }
 
+#
+# Article 13 - Non-Council
+#
+
 lon_violation_article_13 = { # Checks if a nation has ignored arbitration decisions or legal rulings
-	NOT = { }
+	any_country = {
+		limit = { is_lon_member = yes }
+		any_country = { 
+			limit = { is_lon_member = yes }
+			OR = {
+				any_claim = yes
+				has_country_flag = lon_violation_international_law
+			}
+		}
+	}
 }
 
 lon_article_13_exists = { # Checks if Article 13 (binding arbitration and judicial decisions) is in effect
 	has_global_flag = lon_article_13
-}
-
-lon_violation_article_14 = { # Checks if a nation has refused to accept Permanent Court of International Justice decisions
-	NOT = { }
-}
-
-lon_article_14_exists = { # Checks if Article 14 (Permanent Court of International Justice) is in effect
-	has_global_flag = lon_article_14
 }
 
 lon_violation_article_15 = { # Checks if a nation has refused to submit disputes to the League Council
