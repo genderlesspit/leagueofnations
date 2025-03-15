@@ -1,0 +1,28 @@
+#scripted_gui = {
+#	demand_gui = {
+#	
+#		context_type = diplomatic_action_context
+##		
+#		window_name = "demand_main_gui"
+#		
+#		visible = { always = no }
+#
+#		#effects = {
+#		#	#Example Buttons to show it working
+#		#	Button_1_click = {
+#		#		add_to_array = {Example_Array = 1}
+#		#	}
+#		#	Button_2_click = {
+#		#		remove_from_array = {Example_Array = 1}
+#		#	}
+#		#}
+#		triggers = {
+#
+#		}
+#		properties = {
+#
+#		}
+#	}
+#	
+#}
+

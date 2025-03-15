@@ -1,0 +1,10 @@
+on_actions = {
+    on_weekly = {
+        effect = {
+			every_country = {
+				limit = { is_lon_member = yes }
+				calculate_lon_voting_influence = yes
+			}
+		}
+    }
+}

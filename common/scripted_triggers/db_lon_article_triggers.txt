@@ -1,0 +1,128 @@
+# Checks if a country is a member of the League of Nations.
+# This can be used in various event, decision, and AI logic conditions.
+
+is_lon_member = {
+    OR = {
+        has_idea = lon_permanent_council_member
+        has_idea = lon_non_permanent_council_member
+        has_idea = lon_assembly_member
+    }
+}
+
+is_lon_council = {
+	OR = {
+        has_idea = lon_permanent_council_member
+        has_idea = lon_non_permanent_council_member
+	}
+}
+    
+lon_violation_article_4 = { # Checks if a nation is violating Council membership rules
+	NOT = { }
+}
+
+lon_article_4_exists = { # Checks if Article 4 is in effect
+	has_global_flag = lon_article_4
+}
+
+lon_violation_article_8 = { # Checks if a nation has exceeded League-imposed armament limits or failed to comply with reductions
+	OR = { }
+}
+
+lon_article_8_exists = { # Checks if Article 8 (armament reductions) is in effect
+	has_global_flag = lon_article_8
+}
+
+lon_violation_article_9 = { # Checks if a nation is disregarding the Permanent Military Commission’s recommendations
+	NOT = { }
+}
+
+lon_article_9_exists = { # Checks if Article 9 (Permanent Military Commission) is in effect
+	has_global_flag = lon_article_9
+}
+
+lon_violation_article_10 = { # Checks if a nation has violated another League member’s territorial integrity
+	NOT = { }
+}
+
+lon_article_10_exists = { # Checks if Article 10 (territorial integrity protection) is in effect
+	has_global_flag = lon_article_10
+}
+
+lon_violation_article_11 = { # Checks if a nation has engaged in or provoked war without League involvement
+	OR = { }
+}
+
+lon_article_11_exists = { # Checks if Article 11 (war and conflict prevention) is in effect
+	has_global_flag = lon_article_11
+}
+
+lon_violation_article_12 = { # Checks if a nation has refused arbitration before resorting to war
+	NOT = { }
+}
+
+lon_article_12_exists = { # Checks if Article 12 (mandatory arbitration before war) is in effect
+	has_global_flag = lon_article_12
+}
+
+lon_violation_article_13 = { # Checks if a nation has ignored arbitration decisions or legal rulings
+	NOT = { }
+}
+
+lon_article_13_exists = { # Checks if Article 13 (binding arbitration and judicial decisions) is in effect
+	has_global_flag = lon_article_13
+}
+
+lon_violation_article_14 = { # Checks if a nation has refused to accept Permanent Court of International Justice decisions
+	NOT = { }
+}
+
+lon_article_14_exists = { # Checks if Article 14 (Permanent Court of International Justice) is in effect
+	has_global_flag = lon_article_14
+}
+
+lon_violation_article_15 = { # Checks if a nation has refused to submit disputes to the League Council
+	NOT = { }
+}
+
+lon_article_15_exists = { # Checks if Article 15 (League Council dispute mediation) is in effect
+	has_global_flag = lon_article_15
+}
+
+lon_violation_article_16 = { # Checks if a nation has engaged in war against a League member in violation of the Covenant
+}
+
+lon_article_16_exists = { # Checks if Article 16 (League sanctions against aggressors) is in effect
+	has_global_flag = lon_article_16
+}
+
+lon_violation_article_17 = { # Checks if a League nation has refused arbitration with a non-League state before war
+	NOT = { }
+}
+
+lon_article_17_exists = { # Checks if Article 17 (League arbitration in non-member disputes) is in effect
+	has_global_flag = lon_article_17
+}
+
+lon_violation_article_19 = { # Checks if a nation is upholding treaties that threaten global peace
+}
+
+lon_article_19_exists = { # Checks if Article 19 (revision of outdated treaties) is in effect
+	has_global_flag = lon_article_19
+}
+
+lon_violation_article_20 = { # Checks if a nation is in a secret or conflicting alliance with League obligations
+	NOT = { }
+}
+
+lon_article_20_exists = { # Checks if Article 20 (abrogation of conflicting treaties) is in effect
+	has_global_flag = lon_article_20
+}
+
+lon_violation_article_21 = { # Checks if a nation is using regional treaties to undermine League authority
+	NOT = { }
+}
+
+lon_article_21_exists = { # Checks if Article 21 (regional agreements and League compatibility) is in effect
+	has_global_flag = lon_article_21
+}
+

@@ -1,0 +1,227 @@
+on_actions = {
+    on_startup = {
+        effect = {
+			# Permanent Council Members
+			ENG = { 
+				add_ideas = lon_permanent_council_member
+				set_country_flag = lon_voting_bloc_6_member
+			}
+			FRA = { add_ideas = lon_permanent_council_member }
+			ITA = { add_ideas = lon_permanent_council_member }
+			SOV = { add_ideas = lon_permanent_council_member }
+			SPR = { add_ideas = lon_permanent_council_member }
+
+			# Non-Permanent Council Members
+			POL = { add_ideas = lon_non_permanent_council_member }
+			ARG = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			TUR = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_7_member
+			}
+			MEX = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			CHL = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			DEN = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_3_member
+			}
+			ROM = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_2_member
+			}
+			ECU = { 
+				add_ideas = lon_non_permanent_council_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			BEL = { add_ideas = lon_non_permanent_council_member }
+
+			# Assembly Members
+			AFG = { add_ideas = lon_assembly_member }
+			AST = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_6_member
+			}
+			AUS = { add_ideas = lon_assembly_member }
+			BOL = { add_ideas = lon_assembly_member }
+			BRA = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			BUL = { add_ideas = lon_assembly_member }
+			CAN = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_6_member
+			}
+			CHI = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_5_member
+			}
+			COL = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			CUB = { add_ideas = lon_assembly_member }
+			CZE = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_2_member
+			}
+			DOM = { add_ideas = lon_assembly_member }
+			EGY = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_7_member
+			}
+			EST = { add_ideas = lon_assembly_member }
+			ETH = { add_ideas = lon_assembly_member }
+			FIN = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_3_member
+			}
+			GRE = { add_ideas = lon_assembly_member }
+			GUA = { add_ideas = lon_assembly_member }
+			HAI = { add_ideas = lon_assembly_member }
+			HOL = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_3_member
+			}
+			HON = { add_ideas = lon_assembly_member }
+			HUN = { add_ideas = lon_assembly_member }
+			RAJ = { add_ideas = lon_assembly_member }
+			PER = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_1_member
+				set_country_flag = lon_voting_bloc_7_member
+			}
+			IRQ = { add_ideas = lon_assembly_member }
+			IRE = { add_ideas = lon_assembly_member }
+			JAP = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_5_member
+			}
+			LAT = { add_ideas = lon_assembly_member }
+			LIB = { add_ideas = lon_assembly_member }
+			LIT = { add_ideas = lon_assembly_member }
+			LUX = { add_ideas = lon_assembly_member }
+			NZL = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_6_member
+			}
+			NIC = { add_ideas = lon_assembly_member }
+			NOR = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_3_member
+			}
+			PAN = { add_ideas = lon_assembly_member }
+			PAR = { add_ideas = lon_assembly_member }
+			PRU = { add_ideas = lon_assembly_member }
+			POR = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_4_member
+			}
+			SIA = { add_ideas = lon_assembly_member }
+			SAF = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_6_member
+			}
+			SPA = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_4_member
+			}
+			SWE = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_3_member
+			}
+			SWI = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_4_member
+			}
+			URG = { 
+				add_ideas = lon_assembly_member
+				set_country_flag = lon_voting_bloc_1_member
+			}
+			VEN = { add_ideas = lon_assembly_member }
+			YUG = { 
+				set_country_flag = lon_voting_bloc_2_member
+			}
+
+			# ---------------------------------------------
+			# Populate Membership Arrays Based on LON Ideas and Voting Blocs
+			# ---------------------------------------------
+			every_country = {
+				# For Permanent Council Membership:
+				if = {
+					limit = { has_idea = lon_permanent_council_member }
+					add_to_array = {
+						array = global.lon_permanent_council_members
+						value = THIS.id
+					}
+				}
+				
+				# For Non-Permanent Council Membership:
+				if = {
+					limit = { has_idea = lon_non_permanent_council_member }
+					add_to_array = {
+						array = global.lon_non_permanent_council_members
+						value = THIS.id
+					}
+				}
+				
+				# For Assembly Membership:
+				if = {
+					limit = { has_idea = lon_assembly_member }
+					add_to_array = {
+						array = global.lon_assembly_members
+						value = THIS.id
+					}
+				}
+				
+				# For Mandate Membership:
+				if = {
+					limit = { has_idea = lon_mandate }
+					add_to_array = {
+						array = global.lon_mandate_members
+						value = THIS.id
+					}
+				}
+				
+				# For Voting Bloc Memberships (1-7)
+				for_loop_effect = {
+					start = 1
+					end = 7
+					value = v
+					
+					meta_effect = {
+						text = {
+							if = {
+								limit = { has_country_flag = lon_voting_bloc_[CURRENT_BLOC]_member }
+								add_to_array = {
+									array = global.lon_voting_bloc_[CURRENT_BLOC]_members
+									value = THIS.id
+								}
+							}
+						}
+						debug = yes
+						CURRENT_BLOC = "[?v|.0]"					
+					}
+				}
+			}
+			
+			# ---------------------------------------------
+			# Initialize Decisions
+			# ---------------------------------------------
+			
+			every_country = {
+				limit = { is_lon_member = yes }
+				calculate_lon_voting_influence = yes
+				activate_mission = lon_voting_bloc_politics
+			}
+		}
+	}
+}

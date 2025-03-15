@@ -1,0 +1,66 @@
+scripted_diplomatic_actions = {
+    db_demand = {
+        allowed = { 
+            always = yes
+        }
+        visible = { 
+            always = yes
+        }
+        selectable = { 
+            always = yes
+        }
+
+        requires_acceptance = no
+        cost = 0
+        command_power = 0
+        show_acceptance_on_action_button = no
+
+        icon = 1
+
+        # Custom GUI for selecting demands
+        send_scripted_gui = demand_gui
+        #receive_scripted_gui = demand_response_gui
+
+        # Effects when sending the action
+        on_sent_effect = {
+
+        }
+
+        # When the action is accepted
+        complete_effect = {
+
+        }
+
+        # When the action is rejected
+        reject_effect = {
+
+        }
+
+        # Custom AI behavior
+        ai_acceptance = {
+            condition = {
+                base = 50
+                modifier = {
+                    factor = 2
+                    has_war_support < 30
+                }
+                modifier = {
+                    factor = 0.5
+                    has_war_support > 50
+                }
+            }
+        }
+
+        ai_desire = {
+            base = 5
+            #modifier = {
+            # #   ROOT = { has_war_goal_against = FROM }
+            #    add = 50
+            #}
+            #modifier = {
+            #    #ROOT = { has_military_access = FROM }
+            #    add = -20
+            #}
+        }
+    }
+}

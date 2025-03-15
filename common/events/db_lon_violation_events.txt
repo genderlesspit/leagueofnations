@@ -1,0 +1,166 @@
+add_namespace = lon_violations
+
+country_event = {
+    id = lon_violations.4
+    title = lon_violations.4.t
+    desc = lon_violations.4.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.4.a
+    }
+}
+
+country_event = {
+    id = lon_violations.8
+    title = lon_violations.8.t
+    desc = lon_violations.8.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.8.a
+    }
+}
+
+country_event = {
+    id = lon_violations.11
+    title = lon_violations.11.t
+    desc = lon_violations.11.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.11.a
+    }
+}
+
+country_event = {
+    id = lon_violations.12
+    title = lon_violations.12.t
+    desc = lon_violations.12.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.12.a
+    }
+}
+
+country_event = {
+    id = lon_violations.13
+    title = lon_violations.13.t
+    desc = lon_violations.13.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.13.a
+    }
+}
+
+country_event = {
+    id = lon_violations.15
+    title = lon_violations.15.t
+    desc = lon_violations.15.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.15.a
+    }
+}
+
+country_event = {
+    id = lon_violations.16
+    title = lon_violations.16.t
+    desc = lon_violations.16.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.16.a
+    }
+}
+
+country_event = {
+    id = lon_violations.17
+    title = lon_violations.17.t
+    desc = lon_violations.17.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.17.a
+    }
+}
+
+country_event = {
+    id = lon_violations.19
+    title = lon_violations.19.t
+    desc = lon_violations.19.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.19.a
+    }
+}
+
+country_event = {
+    id = lon_violations.20
+    title = lon_violations.20.t
+    desc = lon_violations.20.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.20.a
+    }
+}
+
+country_event = {
+    id = lon_violations.21
+    title = lon_violations.21.t
+    desc = lon_violations.21.desc
+    is_triggered_only = yes
+
+    trigger = { }
+
+    immediate = { }
+
+    option = {
+        name = lon_violations.21.a
+    }
+}

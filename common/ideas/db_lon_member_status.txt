@@ -1,0 +1,26 @@
+ideas = {
+    country = {
+        lon_permanent_council_member = {
+            #picture =
+            allowed = { }
+            modifier = { }
+        }
+
+        lon_non_permanent_council_member = {
+            #picture = 
+            allowed = { }
+            modifier = { }
+        }
+
+        lon_assembly_member = {
+            #picture = 
+            allowed = { }
+            modifier = { }
+        }
+
+        lon_mandate = {
+			allowed = { }
+			modifier = { }
+		}
+    }
+}

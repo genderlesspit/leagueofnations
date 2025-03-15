@@ -1,0 +1,120 @@
+league_of_nations_decisions = {
+
+# Flags for tracking election phases and candidates
+#set_country_flag = lon_submitted_candidacy
+#set_country_flag = {
+#	flag = lon_non_permanent_council_member
+#	days = 365
+#}
+#set_global_flag = lon_special_election_trigger
+#set_global_flag = lon_vacant_seat
+
+# Variables for vote counting and seat assignment
+#set_variable = { global.candidate1_votes = 0 }
+#set_variable = { global.candidate2_votes = 0 }
+#set_variable = { global.candidate3_votes = 0 }
+
+	# Phase 0: Voting Bloc Politics (January 1 - July 31)
+	lon_voting_bloc_politics = {
+		icon = "GFX_lon_voting_blocs"
+		is_good = yes
+		days_mission_timeout = 213  # Ends July 31
+		selectable_mission = no  # Visible to players
+
+		complete_effect = {
+			set_global_flag = lon_voting_bloc_politics_flag
+		}
+		
+		cancel_trigger = {
+			has_global_flag = lon_elections_abolished
+		}
+
+		#allowed = { 
+		#	# This mission is always active during the pre-election period
+		#}
+
+		available = {
+			is_lon_member = no
+		}
+
+		#activation = {
+		#	# Ensures this mission starts immediately
+		#}
+
+		timeout_effect = {
+			# Triggers Phase 1: Candidacy Submission on August 1st
+			activate_mission = lon_candidacy_submission
+			custom_effect_tooltip = lon_voting_bloc_politics_tt
+		}
+	}
+	# Phase 1: Candidacy Submission (August 1 - September 5)
+	lon_candidacy_submission = {
+		icon = "GFX_lon_candidacy_submission"
+		is_good = yes
+		days_mission_timeout = 36  # Ends September 5
+		selectable_mission = no
+		
+		activation = { has_global_flag = global_flag_lon_election }
+
+		timeout_effect = {
+			# If at least three candidates have applied, move to voting phase
+			#if = { check_variable = { global.candidate_count > 2 } }
+			activate_mission = lon_voting_phase
+		}
+	}
+
+	# Phase 2: Voting (September 6 - September 15)
+	lon_voting_phase = {
+		icon = "GFX_lon_voting_phase"
+		is_good = yes
+		days_mission_timeout = 10  # Ends September 15
+		selectable_mission = no
+		
+		activation = { has_global_flag = global_flag_lon_election }
+
+		timeout_effect = {
+			# Move to results processing phase
+			activate_mission = lon_results_processing
+		}
+	}
+
+	# Phase 3: Results Processing & Council Assignment (September 16 - December 31)
+	lon_results_processing = {
+		icon = "GFX_lon_results_processing"
+		is_good = yes
+		days_mission_timeout = 107  # Ends December 31
+		selectable_mission = no
+		
+		activation = { has_global_flag = global_flag_lon_election }
+
+		#timeout_effect = {
+		#	# Process election results (assign new council members, reset cycle)
+		#	every_country = {
+		#		if = { has_country_flag = lon_submitted_candidacy }
+		#		if = { global.elected_candidate_1 == THIS }
+		#		set_country_flag = lon_non_permanent_council_member
+		#	}
+		#	every_country = {
+		#		if = { has_country_flag = lon_submitted_candidacy }
+		#		if = { global.elected_candidate_2 == THIS }
+		#		set_country_flag = lon_non_permanent_council_member
+		#	}
+		##	every_country = {
+		#		if = { has_country_flag = lon_submitted_candidacy }
+		#		if = { global.elected_candidate_3 == THIS }
+		#		set_country_flag = lon_non_permanent_council_member
+		#	}
+		#
+		#	# Reset for next election cycle
+		#	set_variable = { global.candidate1_votes = 0 }
+		#	set_variable = { global.candidate2_votes = 0 }
+		#	set_variable = { global.candidate3_votes = 0 }
+		#	set_variable = { global.candidate_count = 0 }
+		#	clr_country_flag = lon_submitted_candidacy
+		#	clr_country_flag = lon_has_voted
+		#
+		#	# Restart the election cycle
+		#	activate_mission = lon_candidacy_submission
+		#}
+	}
+}

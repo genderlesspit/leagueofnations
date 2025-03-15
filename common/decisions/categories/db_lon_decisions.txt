@@ -1,0 +1,27 @@
+league_of_nations_decisions = {
+    # Only League of Nations member states see this category.
+    allowed = { is_lon_member = yes }
+    visible = { always = yes }
+    
+    # Priority sets the order in the decisions menu (higher values appear near the top).
+    priority = 10
+	
+	scripted_gui = league_of_nations_gui
+    
+    # The icon (automatically prefixed with GFX_decision_category_) is shown for the category.
+    #icon = lon_icon
+    
+    # A picture can be defined that appears to the left of the category's description.
+    #picture = GFX_decision_category_lon_picture
+    
+    # Forces the category to display even if it contains no visible decisions.
+    visible_when_empty = yes
+    
+    # Optional: Define a clickable map area for quick camera movement.
+    #on_map_area = {
+    #    state = 123            # The state used as the centre for the map area.
+    #    name = league_of_nations_map_area  # Localisation key for the map area name.
+    #    zoom = 850             # Camera zoom level when the map area is clicked.
+    #    # Optionally, you can add triggers here (e.g., target_root_trigger) if needed.
+    #}
+}

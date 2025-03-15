@@ -1,0 +1,138 @@
+update_lon_membership = {
+	# ---------------------------------------------
+	# Initialize LON Membership Arrays
+	# ---------------------------------------------
+
+	clear_array = global.lon_permanent_council_members
+	clear_array = global.lon_non_permanent_council_members
+	clear_array = global.lon_assembly_members
+	clear_array = global.lon_mandate_members
+
+	# ---------------------------------------------
+	# Populate Membership Arrays Based on LON Ideas
+	# ---------------------------------------------
+	every_country = {
+		# For Permanent Council Membership:
+		if = {
+			limit = { has_idea = lon_permanent_council_member }
+			add_to_array = {
+				array = global.lon_permanent_council_members
+				value = THIS.id
+			}
+		}
+		
+		# For Non-Permanent Council Membership:
+		if = {
+			limit = { has_idea = lon_non_permanent_council_member }
+			add_to_array = {
+				array = global.lon_non_permanent_council_members
+				value = THIS.id
+			}
+		}
+		
+		# For Assembly Membership:
+		if = {
+			limit = { has_idea = lon_assembly_member }
+			add_to_array = {
+				array = global.lon_assembly_members
+				value = THIS.id
+			}
+		}
+		
+		# For Mandate Membership:
+		if = {
+			limit = { has_idea = lon_mandate }
+			add_to_array = {
+				array = global.lon_mandate_members
+				value = THIS.id
+			}
+		}
+	}
+}
+
+update_lon_voting_blocs = {
+
+	# ---------------------------------------------
+	# Initialize Voting Bloc Indices (1-10)
+	# ---------------------------------------------
+
+	clear_array = global.total_voting_blocs  # Clear global voting bloc index array
+
+	for_loop_effect = {
+		start = 1
+		end = 11
+		add = 1
+		value = temp_bloc_num
+		add_to_array = {
+			array = global.total_voting_blocs
+			value = temp_bloc_num
+		}
+	}
+
+	# ---------------------------------------------
+	# Assign Countries to Voting Blocs
+	# ---------------------------------------------
+
+	for_each_loop = {
+		array = global.total_voting_blocs
+		value = current_bloc_index  # Temporary variable holding bloc number (1-10)
+		index = current_index
+		break = temp_break
+
+		# Clear the array for the current bloc before adding members
+		meta_effect = {
+			text = {
+				clear_array = global.lon_voting_bloc_[?current_bloc_index|.0]_members
+			}
+			debug = yes
+		}
+
+		# Iterate through all countries and check if they belong to this bloc
+		every_country = {
+			if = {
+				meta_effect = {
+					text = {
+						every_country = {
+							limit = { has_country_flag = voting_bloc_[?current_bloc_index|.0]_member }
+							add_to_array = {
+								array = global.lon_voting_bloc_[?current_bloc_index|.0]_members
+								value = THIS.id
+							}
+						}
+					}
+					debug = yes  # Debugging output to game.log
+				}
+			}
+		}
+	}
+}
+
+calculate_lon_voting_influence = {
+    
+    # Loop through each voting bloc (1-7)
+	set_variable = { THIS.lon_voting_influence = 0 }
+	
+    for_loop_effect = {
+        start = 1
+        end = 8  # Using 8 as end because we use 1-indexed blocs
+        value = current_bloc
+		        
+		meta_effect = {
+			text = {
+				if = {
+					limit = { has_country_flag = lon_voting_bloc_[CURRENT_BLOC]_member }
+					for_each_scope_loop = {
+						array = global.lon_voting_bloc_[CURRENT_BLOC]_members
+						if = {
+							limit = { NOT = { tag = PREV } }
+							add_to_variable = { PREV.lon_voting_influence = THIS.opinion@PREV }
+						}
+					}
+				}
+			}
+			CURRENT_BLOC = "[?THIS.current_bloc|.0]"
+			debug = yes
+		}
+    }
+	
+}

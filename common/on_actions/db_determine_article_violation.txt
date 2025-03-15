@@ -1,0 +1,228 @@
+on_actions = { #Determine Article Violation
+    on_weekly = {
+        effect = {
+            every_country = { 
+                if = {
+                    limit = { lon_article_8_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_8 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_8
+                            days = 90  # Adjusted for severity of violation
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_8 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.8
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_9_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_9 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_9
+                            days = 60
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_9 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.9
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_10_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_10 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_10
+                            days = 120
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_10 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.10
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_11_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_11 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_11
+                            days = 180
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_11 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.11
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_12_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_12 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_12
+                            days = 150
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_12 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.12
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_13_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_13 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_13
+                            days = 200
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_13 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.13
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_14_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_14 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_14
+                            days = 100
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_14 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.14
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_15_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_15 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_15
+                            days = 90
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_15 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.15
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_16_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_16 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_16
+                            days = 300
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_16 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.16
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_17_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_17 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_17
+                            days = 250
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_17 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.17
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_19_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_19 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_19
+                            days = 80
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_19 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.19
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_20_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_20 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_20
+                            days = 60
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_20 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.20
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { lon_article_21_exists = yes }
+                    if = {
+                        limit = { lon_violation_article_21 = yes }
+                        set_country_flag = {
+                            flag = violated_lon_article_21
+                            days = 45
+                            value = 1
+                        }
+                        ROOT = { save_event_target_as = violated_lon_article_21 }
+                        every_country = {
+                            limit = { is_lon_member = yes }
+                            country_event = lon_violations.21
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

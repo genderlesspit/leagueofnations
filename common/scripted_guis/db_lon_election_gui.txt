@@ -1,0 +1,55 @@
+scripted_gui = {
+    league_of_nations_gui = {
+        window_name = "league_of_nations_window"
+        context_type = player_context
+        dirty = league_of_nations_update
+        
+        visible = {
+            has_array = league_of_nations
+        }
+
+        size = { width = 400 height = 300 }
+
+        dynamic_lists = {
+            league_nations_list = {
+                array = league_of_nations
+                value = current_nation
+                change_scope = yes
+                entry_container = "league_nation_entry"
+            }
+            lon_permanent_council_list = {
+                array = global.lon_permanent_council_members
+                value = current_nation
+                change_scope = yes
+                entry_container = "league_nation_entry"
+            }
+            lon_non_permanent_council_list = {
+                array = global.lon_non_permanent_council_members
+                value = current_nation
+                change_scope = yes
+                entry_container = "league_nation_entry"
+            }
+            lon_assembly_list = {
+                array = global.lon_assembly_members
+                value = current_nation
+                change_scope = yes
+                entry_container = "league_nation_entry"
+            }
+            lon_mandate_list = {
+                array = global.lon_mandate_members
+                value = current_nation
+                change_scope = yes
+                entry_container = "league_nation_entry"
+            }
+        }
+        
+        effects = {
+            add_nation_button_click = {
+                add_to_array = { league_of_nations = ROOT }
+            }
+            remove_nation_button_click = {
+                remove_from_array = { league_of_nations = ROOT }
+            }
+        }
+    }
+}
