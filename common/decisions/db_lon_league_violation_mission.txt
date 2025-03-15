@@ -1,42 +1,77 @@
 league_of_nations_decisions = {
 
-    lon_mission_article_4 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_4 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 90
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
+    #lon_mission_article_4 = {
+    #    allowed = { is_lon_member = yes }
+    #    target_root_trigger = { }
+    #    target_trigger = { FROM = { has_country_flag = violated_lon_article_4 } }
+    #    icon = lon_mission_icon
+    #    is_good = no
+    #    war_with_target_on_timeout = yes
+    #    days_mission_timeout = 90
+    #    selectable_mission = no
+    #    complete_effect = { }
+    #    timeout_effect = { }
+    #}
 
-    lon_mission_article_8 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_8 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 90
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
+    #lon_mission_article_8 = {
+    #    allowed = { is_lon_member = yes }
+    #    target_root_trigger = { }
+    #    target_trigger = { FROM = { has_country_flag = violated_lon_article_8 } }
+    #    icon = lon_mission_icon
+    #    is_good = no
+    #    war_with_target_on_timeout = yes
+    #    days_mission_timeout = 90
+    #    selectable_mission = no
+    #    complete_effect = { }
+    #    timeout_effect = { }
+    #}
 
-    lon_mission_article_11 = {
+
+    lon_mission_debug = {
         allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_11 } }
         icon = lon_mission_icon
+		#available = { NOT = { lon_violation_article_10 } }
         is_good = no
-        war_with_target_on_timeout = yes
+        war_with_target_on_timeout = no
+        days_mission_timeout = 180
+        selectable_mission = yes
+        complete_effect = { set_global_flag = violated_lon_article_10_success }
+        timeout_effect = { set_global_flag = violated_lon_article_10_failure }
+    }
+	
+    lon_mission_article_10 = {
+        allowed = { is_lon_member = yes }
+        target_trigger = { FROM = { has_country_flag = violated_lon_article_10 } }
+		cancel_trigger = { FROM = { NOT = { has_country_flag = violated_lon_article_10 } } }
+        icon = lon_mission_icon
+		available = { has_global_flag = violated_lon_article_10 }
+        is_good = no
+        war_with_target_on_timeout = no
         days_mission_timeout = 180
         selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
+        complete_effect = { set_global_flag = violated_lon_article_10_success }
+        timeout_effect = { set_global_flag = violated_lon_article_10_failure }
+    }
+	
+    lon_mission_article_11 = {
+        allowed = { is_lon_member = yes }
+        target_trigger = { FROM = { has_country_flag = violated_lon_article_11 } }
+		cancel_trigger = { FROM = { NOT = { has_country_flag = violated_lon_article_11 } } }
+        icon = lon_mission_icon
+		available = { has_global_flag = violated_lon_article_11 }
+		selectable_mission = no
+        is_good = no
+        war_with_target_on_timeout = no
+        days_mission_timeout = 180
+        selectable_mission = no
+        complete_effect = { 
+			set_global_flag = violated_lon_article_11_success 
+			FROM = { clr_country_flag = violated_lon_article_11 }
+		}
+        timeout_effect = { 
+			set_global_flag = violated_lon_article_11_failure
+			FROM = { clr_country_flag = violated_lon_article_11 }
+		}
     }
 
     lon_mission_article_12 = {
@@ -65,19 +100,6 @@ league_of_nations_decisions = {
         timeout_effect = { }
     }
 
-    lon_mission_article_14 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_14 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 100
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
-
     lon_mission_article_15 = {
         allowed = { is_lon_member = yes }
         target_root_trigger = { }
@@ -86,19 +108,6 @@ league_of_nations_decisions = {
         is_good = no
         war_with_target_on_timeout = yes
         days_mission_timeout = 90
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
-
-    lon_mission_article_16 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_16 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 300
         selectable_mission = no
         complete_effect = { }
         timeout_effect = { }
@@ -125,32 +134,6 @@ league_of_nations_decisions = {
         is_good = no
         war_with_target_on_timeout = yes
         days_mission_timeout = 80
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
-
-    lon_mission_article_20 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_20 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 60
-        selectable_mission = no
-        complete_effect = { }
-        timeout_effect = { }
-    }
-
-    lon_mission_article_21 = {
-        allowed = { is_lon_member = yes }
-        target_root_trigger = { }
-        target_trigger = { FROM = { has_country_flag = violated_lon_article_21 } }
-        icon = lon_mission_icon
-        is_good = no
-        war_with_target_on_timeout = yes
-        days_mission_timeout = 45
         selectable_mission = no
         complete_effect = { }
         timeout_effect = { }

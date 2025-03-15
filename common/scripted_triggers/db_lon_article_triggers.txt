@@ -48,12 +48,10 @@ is_lon_council = {
 #
 
 lon_violation_article_10 = { # Checks if a nation has violated another League member’s territorial integrity
-	any_country = {
-		limit = { is_lon_member = yes }
-		any_country = { 
-			limit = { NOT = { is_lon_member = yes } }
-			has_war_with = PREV	
-		}
+	is_lon_member = no
+	any_country = { 
+		is_lon_member = yes
+		has_war_with = PREV	
 	}
 }
 
@@ -66,12 +64,10 @@ lon_article_10_exists = { # Checks if Article 10 (territorial integrity protecti
 #
 
 lon_violation_article_11 = { # Checks if a nation has engaged in or provoked war without League involvement
-	any_country = {
-		limit = { NOT = { is_lon_member = yes } }
-		any_country = { 
-			limit = { NOT = { is_lon_member = yes } }
-			has_war_with = PREV	
-		}
+	is_lon_member = no
+	any_country = { 
+		is_lon_member = no
+		has_war_with = PREV	
 	}
 }
 
@@ -84,10 +80,10 @@ lon_article_11_exists = { # Checks if Article 11 (war and conflict prevention) i
 #
 
 lon_violation_article_12 = { # Checks if a nation has refused arbitration before resorting to war
-	any_country = {
-		limit = { is_lon_member = yes }
-		any_country = { 
-			limit = { is_lon_member = yes }
+	is_lon_member = yes 
+	any_country = { 
+		is_lon_member = yes
+		PREV = { 
 			OR = {
 				has_wargoal_against = PREV
 				is_justifying_wargoal_against = PREV
@@ -105,10 +101,8 @@ lon_article_12_exists = { # Checks if Article 12 (mandatory arbitration before w
 #
 
 lon_violation_article_13 = { # Checks if a nation has ignored arbitration decisions or legal rulings
-	any_country = {
-		limit = { is_lon_member = yes }
-		has_country_flag = lon_violation_international_law
-	}
+	is_lon_member = yes
+	has_country_flag = lon_violation_international_law
 }
 
 lon_article_13_exists = { # Checks if Article 13 (binding arbitration and judicial decisions) is in effect
@@ -120,10 +114,8 @@ lon_article_13_exists = { # Checks if Article 13 (binding arbitration and judici
 #
 
 lon_violation_article_15 = { # Checks if a nation has refused to submit disputes to the League Council
-	any_country = {
-		limit = { is_lon_member = yes }
-		has_country_flag - lon_refused_article_13_arbitration
-	}
+	is_lon_member = yes
+	has_country_flag = lon_refused_article_13_arbitration
 }
 
 lon_article_15_exists = { # Checks if Article 15 (League Council dispute mediation) is in effect
@@ -135,10 +127,8 @@ lon_article_15_exists = { # Checks if Article 15 (League Council dispute mediati
 #
 
 lon_violation_article_17 = { # Checks if a League nation has refused arbitration with a non-League state before war
-	any_country = {
-		limit = { is_lon_member = no }
-		has_country_flag = lon_violation_international_law
-	}
+	is_lon_member = no 
+	has_country_flag = lon_violation_international_law
 }
 
 lon_article_17_exists = { # Checks if Article 17 (League arbitration in non-member disputes) is in effect
@@ -150,10 +140,8 @@ lon_article_17_exists = { # Checks if Article 17 (League arbitration in non-memb
 #
 
 lon_violation_article_19 = { # Checks if a league nation is upholding treaties that threaten global peace
-	any_country = {
-		limit = { is_lon_member = yes }
-		has_country_flag = lon_violation_endangering_treaty
-	}
+	is_lon_member = yes
+	has_country_flag = lon_violation_endangering_treaty
 }
 
 lon_article_19_exists = { # Checks if Article 19 (revision of outdated treaties) is in effect

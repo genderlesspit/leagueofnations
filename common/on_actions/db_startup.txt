@@ -1,6 +1,17 @@
 on_actions = {
     on_startup = {
         effect = {
+		
+			# Article Initialization
+			
+			set_global_flag = lon_article_10
+			set_global_flag = lon_article_11
+			set_global_flag = lon_article_12
+			set_global_flag = lon_article_13
+			set_global_flag = lon_article_15
+			set_global_flag = lon_article_17
+			set_global_flag = lon_article_19
+			
 			# Permanent Council Members
 			ENG = { 
 				add_ideas = lon_permanent_council_member
