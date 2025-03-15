@@ -26,9 +26,8 @@ league_of_nations_decisions = {
     #    timeout_effect = { }
     #}
 
-
     lon_mission_debug = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         icon = lon_mission_icon
 		#available = { NOT = { lon_violation_article_10 } }
         is_good = no
@@ -40,7 +39,7 @@ league_of_nations_decisions = {
     }
 	
     lon_mission_article_10 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_10 } }
 		cancel_trigger = { FROM = { NOT = { has_country_flag = violated_lon_article_10 } } }
         icon = lon_mission_icon
@@ -54,7 +53,7 @@ league_of_nations_decisions = {
     }
 	
     lon_mission_article_11 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_11 } }
 		cancel_trigger = { FROM = { NOT = { has_country_flag = violated_lon_article_11 } } }
         icon = lon_mission_icon
@@ -75,7 +74,7 @@ league_of_nations_decisions = {
     }
 
     lon_mission_article_12 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_root_trigger = { }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_12 } }
         icon = lon_mission_icon
@@ -88,7 +87,7 @@ league_of_nations_decisions = {
     }
 
     lon_mission_article_13 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_root_trigger = { }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_13 } }
         icon = lon_mission_icon
@@ -101,7 +100,7 @@ league_of_nations_decisions = {
     }
 
     lon_mission_article_15 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_root_trigger = { }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_15 } }
         icon = lon_mission_icon
@@ -114,7 +113,7 @@ league_of_nations_decisions = {
     }
 
     lon_mission_article_17 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_root_trigger = { }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_17 } }
         icon = lon_mission_icon
@@ -127,7 +126,7 @@ league_of_nations_decisions = {
     }
 
     lon_mission_article_19 = {
-        allowed = { is_lon_member = yes }
+        #allowed = { is_lon_member = yes }
         target_root_trigger = { }
         target_trigger = { FROM = { has_country_flag = violated_lon_article_19 } }
         icon = lon_mission_icon
