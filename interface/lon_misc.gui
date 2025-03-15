@@ -1,0 +1,25 @@
+guiTypes = {
+	containerWindowType = {
+        name = "diplo_threat"
+        position = { x = 0 y = 0}
+        size = { width=128 height=128 }
+
+		iconType = {
+			name = "bg"
+			position = { x = 46 y = 256 }
+			quadTextureSprite ="GFX_generic_box_smallest"
+			origo = right
+		}
+
+		instantTextboxType = {
+			name = "aggression"
+			position = { x = 46 y = 260 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "[?FROM.lon_threat|0%]"
+			maxWidth = 64
+			maxHeight = 20
+			format = right
+		}
+    }
+}

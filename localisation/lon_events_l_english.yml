@@ -1,0 +1,13 @@
+﻿l_english:
+  lon.1.t: "League of Nations Election"
+  lon.1.d.d: "This week, the League of Nations held their annual elections in order to decide the new president of the organization, and the results came as a clear win for [?global.lon_leader.GetLeader] of [?global.lon_leader.GetNameDef]. It would appear as though the League of Nations is in good hands, and democracy is secured."
+  lon.1.d.n: "This week, the League of Nations held their annual elections in order to decide the new president of the organization, and the results came as a clear win for [?global.lon_leader.GetLeader] of [?global.lon_leader.GetNameDef]. Clearly most would disagree that the democratic powers have lived up to the expectations of the members of the League of Nations, with their choice to vote in a neutral power."
+  lon.1.d.c: "This week, the League of Nations held their annual elections in order to decide the new president of the organization, and the results came as a clear win for [?global.lon_leader.GetLeader] of [?global.lon_leader.GetNameDef]. This is a highly concerning move and victory for the communists of the world, potentially setting a dangerous precedent for communist dominance of the League of Nations."
+  lon.1.d.f: "This week, the League of Nations held their annual elections in order to decide the new president of the organization, and the results came as a clear win for [?global.lon_leader.GetLeader] of [?global.lon_leader.GetNameDef]. Perhaps the end of democracy has finally come, as clearly the original mission of the League of Nations has certainly been undermined for this victory to be possible."
+  lon.1a: "Interesting..."
+  lon.2.t: "[FROM.GetNameDefCap] Leaves the League of Nations"
+  lon.2.d: "It turns out that [FROM.GetAdjective] membership in the League of Nations was not meant to last, as earlier this morning they announced that [FROM.GetNameDef] would be exiting the League of Nations in a historic motion."
+  lon.2a: "Unsettling."
+  lon.3.t: "[FROM.GetNameDefCap] Joins the League of Nations"
+  lon.3.d: "[FROM.GetAdjectiveCap] entry into the League of Nations seemed inevitable to most, and now [FROM.GetLeader] and [?global.lon_leader.GetLeader] have become on good terms, allowing [FROM.GetDef] to join the League of Nations on equal terms."
+  lon.3a: "Wonderful."

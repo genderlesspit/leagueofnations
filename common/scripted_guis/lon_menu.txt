@@ -1,0 +1,177 @@
+scripted_gui = {
+	open_lon_menu = {
+		context_type = player_context
+		window_name = "open_lon_menu"
+
+		triggers = {
+			open_lon_btn_visible = {
+				is_in_array = { global.lon_members = THIS }
+			}
+		}
+		effects = {
+			open_lon_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = lon_menu_open
+					}
+					clr_country_flag = lon_menu_open
+				}
+				else = {
+					set_country_flag = lon_menu_open
+				}
+			}
+		}
+
+		ai_enabled = {
+			always = no
+		}
+	}
+
+	lon_menu = {
+		context_type = player_context
+		window_name = "lon_menu"
+
+		visible = {
+			OR = {
+				has_country_flag = lon_menu_open
+				AND = {
+					is_ai = yes
+					is_in_array = { global.lon_members = THIS }
+				}
+			}
+		}
+
+		dynamic_lists = {
+			lon_members_gridbox = {
+				array = global.lon_members
+				entry_container = lon_member_entry
+				change_scope = yes
+
+				ai_weights = {
+					vote_btn_no_click = {
+						ai_will_do = {
+							base = 1
+							modifier = {
+								add = 1
+								tag = ROOT
+								is_major = yes
+							}
+							modifier = {
+								set_temp_variable = { my_opinion = 0 }
+								ROOT = { set_temp_variable = { my_opinion = opinion@PREV } }
+								multiply_temp_variable = { my_opinion = 0.1 }
+								if = {
+									limit = {
+										check_variable = { my_opinion < 0 }
+									}
+									multiply_temp_variable = { my_opinion = 0.1 }
+								}
+								add = my_opinion
+							}
+							modifier = {
+								factor = 1.5
+								is_major = yes
+							}
+							modifier = {
+								factor = 1.5
+								is_faction_leader = yes
+							}
+							modifier = {
+								factor = 1.5
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									overlord = { check_variable = { lon_vote = PREV } }
+								}
+								else = {
+									always = no
+								}
+							}
+							modifier = {
+								factor = 0.5
+								is_enemy_ideology = yes
+							}
+							modifier = {
+								factor = 0.5
+								has_war = yes
+							}
+							modifier = {
+								set_temp_variable = { threat_scale = 1 }
+								subtract_from_temp_variable = { threat_scale = lon_threat }
+								factor = threat_scale
+							}
+						}
+					}
+				}
+			}
+		}
+
+		triggers = {
+			vote_btn_yes_visible = {
+				ROOT = {
+					check_variable = { lon_vote = PREV }
+				}
+			}
+			leave_btn_click_enabled = {
+				NOT = {
+					check_variable = { global.lon_leader = ROOT }
+				}
+			}
+		}
+		effects = {
+			close_btn_click = {
+				clr_country_flag = lon_menu_open
+			}
+			vote_btn_no_click = {
+				ROOT = {
+					set_variable = { lon_vote = PREV }
+					set_variable = { lon_voted = 5 }
+				}
+			}
+			leave_btn_click = {
+				news_event = lon.2
+				clr_country_flag = lon_menu_open
+				remove_from_array = { global.lon_members = ROOT }
+			}
+		}
+
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 24
+		ai_test_variance = 0.5
+		
+		ai_check = {
+			always = yes
+		}
+
+		ai_weights = {
+			leave_btn_click = {
+				ai_will_do = {
+					base = -10
+					modifier = {
+						set_temp_variable = { threat_scale = FROM.lon_threat }
+						add_to_temp_variable = { threat_scale = global.threat }
+						add_to_temp_variable = { threat_scale = ROOT.lon_threat }
+						multiply_temp_variable = { threat_scale = 20 }
+						add = threat_scale
+					}
+				}
+			}
+		}
+
+		properties = {
+			my_flag = {
+				image = "[ROOT.GetFlag]"
+			}
+			entry_flag = {
+				image = "[THIS.GetFlag]"
+			}
+			leader_flag = {
+				image = "[?global.lon_leader.GetFlag]"
+			}
+		}
+	}
+}
