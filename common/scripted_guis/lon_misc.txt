@@ -1,0 +1,7 @@
+scripted_gui = {
+	diplo_threat = {
+		context_type = selected_country_context
+		window_name = "diplo_threat"
+		parent_window_token = selected_country_view_diplomacy
+	}
+}

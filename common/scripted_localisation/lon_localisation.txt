@@ -1,0 +1,43 @@
+defined_text = {
+    name = lon_election_text
+    text = {
+        trigger = {
+			check_variable = { global.lon_elections > 0 }
+        }
+        localization_key = LON_ELECTION
+    }
+    text = {
+        localization_key = LON_NO_ELECTION
+    }
+}
+defined_text = {
+	name = lon_membership_tooltip
+	text = {
+        trigger = {
+			is_in_array = { global.lon_members = THIS }
+			check_variable = { global.lon_leader = THIS }
+        }
+        localization_key = LON_LEADER
+    }
+	text = {
+        trigger = {
+			is_in_array = { global.lon_members = THIS }
+        }
+        localization_key = LON_MEMBER
+    }
+    text = {
+        localization_key = LON_NON_MEMBER
+    }
+}
+defined_text = {
+	name = leave_lon
+	text = {
+        trigger = {
+			check_variable = { global.lon_leader = ROOT }
+        }
+        localization_key = DISSOLVE_LON
+    }
+    text = {
+        localization_key = LEAVE_LON
+    }
+}

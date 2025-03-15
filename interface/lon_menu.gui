@@ -1,0 +1,263 @@
+guiTypes = {
+	containerWindowType = {
+        name = "open_lon_menu"
+        position = { x = 0 y = 0}
+        size = { width=128 height=128 }
+		Orientation = LOWER_RIGHT
+		origo = LOWER_RIGHT
+
+		buttonType = {
+			name = "open_lon_btn"
+			position = { x = -5 y = -330 }
+			quadTextureSprite ="GFX_lon"
+			buttonFont = "Main_14_black"
+			orientation = CENTER
+			clicksound = click_close
+		}
+    }
+    containerWindowType = {
+        name = "lon_menu"
+        position = { x = 0 y = 78 }
+        size = { width=100%% height=100%% }
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_plain_bg2"
+		}
+
+		containerWindowType = {
+			name = "bg"
+			position = { x = 0 y = 47 }
+			size = { width = 100%% height = 100%% }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window"
+			}
+		}
+
+		containerWindowType = {
+			name = "league_of_nations_members_list"
+			position = { x = 0 y = 47 }
+			size = { width = 372 height = 100%% }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window_1b_border"
+			}
+
+			containerWindowType = {
+				name = "entry_window"
+				position = { x = 0 y = -6 }
+				size = { width = -5 height = 100%% }
+				margin = { top = 18 left = 8 bottom = 12 right = 8 }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 38
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_window_transparent"
+				}
+
+				gridboxtype = {
+					name = "lon_members_gridbox"
+					position = { x = 0 y = 0 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 256 height = 32 }
+					max_slots_horizontal = 1
+					add_horizontal = no
+					format = "UPPER_LEFT"
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "personal_window"
+			position = { x = 365 y = 119 }
+			size = { width = 100%% height = 96 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_plain_bg"
+			}
+
+			buttonType = {
+				name = "my_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x = 25 y = 59 }
+			}
+
+			iconType = {
+				name = "my_flag_border"
+				quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+				position = { x = 20 y = 54 }
+				alwaystransparent = yes
+			}
+
+			instantTextboxType = {
+				name = "aggression"
+				position = { x = 84 y = 61 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				text = "[ROOT.GetNameDefCap] currently has an aggression of [?ROOT.lon_threat|0%]"
+				maxWidth = 580
+				maxHeight = 96
+				format = left
+			}
+		}
+
+		containerWindowType = {
+			name = "election_window"
+			position = { x = 365 y = 77 }
+			size = { width = 100%% height = 96 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_plain_bg"
+			}
+
+			instantTextboxType = {
+				name = "elections"
+				position = { x = 24 y = 68 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				text = "[lon_election_text]"
+				maxWidth = 800
+				maxHeight = 84
+				format = left
+			}
+		}
+
+		containerWindowType = {
+			name = "leader_flag_window"
+			position = { x = 365 y = 47 }
+			size = { width = 100%% height = 96 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_plain_bg"
+			}
+
+			buttonType = {
+				name = "leader_flag"
+				position = { x = 48 y = 21 }
+				spriteType = "GFX_shield_medium"
+			}
+
+			iconType = {
+				name = "leader_flag_frame"
+				position = { x = 22 y = 10 }
+				spriteType = "GFX_diplo_flag_frame"
+			}
+
+			instantTextboxType = {
+				name = "lon_leader"
+				position = { x = 164 y = 14 }
+				textureFile = ""
+				font = "hoi_36header"
+				borderSize = {x = 0 y = 0}
+				text = "The League of Nations is led by [?global.lon_leader.GetNameDef]"
+				maxWidth = 740
+				maxHeight = 68
+				format = left
+				vertical_alignment = center
+			}
+		}
+
+		instantTextboxType = {
+			name = "lon_title"
+			position = { x = 40 y = 8 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "League of Nations"
+			maxWidth = 440
+			maxHeight = 20
+			format = left	
+		}
+
+		buttonType = {
+			name = "leave_btn"
+			position = { x = 380 y = 9 }
+			quadTextureSprite = "GFX_button_148x34"
+			font = "hoi_18mbs"
+			text = "[leave_lon]"
+			format = center
+			Orientation = "UPPER_LEFT"
+		}
+		
+		buttonType = {
+			name = "close_btn"
+			position = { x = -43 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+    }
+	containerWindowType = {
+		name = "lon_member_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 256 height = 48 }
+
+		containerWindowType = {
+			name = "flag_window"
+			position = { x = 4 y = 8 }
+			size = { width = 50 height = 50 }
+
+			# flag
+			buttonType = {
+				name = "entry_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x = 5 y = 4 }
+			}
+
+			iconType = {
+				name = "entry_flag_border"
+				quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextboxType = {
+			name = "entry_name"
+			position = { x = 56 y = 16 }
+			font = "hoi_18mbs"
+			text = "[THIS.GetNameDefCap]"
+			maxWidth = 250
+			maxHeight = 16
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "vote_btn_no"
+			position = { x = 316 y = 18 }
+			quadTextureSprite = "GFX_checkbox_small"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		iconType = {
+			name = "vote_btn_yes"
+			position = { x = 315 y = 18 }
+			quadTextureSprite = "GFX_checkbox_small"
+			frame = 2
+		}
+
+		instantTextboxType = {
+			name = "entry_votes"
+			position = { x = 250 y = 16 }
+			font = "hoi_18mbs"
+			text = "[?THIS.lon_votes]"
+			maxWidth = 64
+			maxHeight = 16
+			format = right
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+}
